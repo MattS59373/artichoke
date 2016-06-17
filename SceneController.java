@@ -19,6 +19,9 @@ public class SceneController
     @FXML   private Button noButton;
     @FXML   private Button exitButton;
     @FXML   private ListView listView;
+    @FXML   private Label label1;
+    @FXML   private label label2;
+    
 
     public SceneController()          // The constructor method, called first when the scene is loaded.
     {
@@ -101,6 +104,7 @@ public class SceneController
         else
         {
             System.out.println(selectedItem + " (id: " + selectedItem.id + ") is selected.");
+            
         }
     }    
 
