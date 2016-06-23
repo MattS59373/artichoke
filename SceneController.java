@@ -5,6 +5,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import java.util.List;
 
 public class SceneController
@@ -19,9 +21,11 @@ public class SceneController
     @FXML   private Button noButton;
     @FXML   private Button exitButton;
     @FXML   private ListView listView;
-    @FXML   private Label label1;
-    @FXML   private label label2;
-    
+    @FXML   private Button Badd;
+    @FXML   private Button Bedit;
+    @FXML   private Button Bremove;
+    @FXML   private Button Bdetails;
+    @FXML   private Button Bexit;
 
     public SceneController()          // The constructor method, called first when the scene is loaded.
     {
@@ -104,9 +108,27 @@ public class SceneController
         else
         {
             System.out.println(selectedItem + " (id: " + selectedItem.id + ") is selected.");
-            
+
         }
     }    
 
-}
+    @FXML void openNewScene()
+    {
+        FXMLLoader Loader = new FXMLLoader(Application.class.getResource("scene2.fxml"));
 
+        try
+        {	
+            Stage stage2 = new Stage();
+            stage2.setTitle("JavaFX Demo 2");
+            stage2.setScene(new Scene(Loader.load()));
+            stage2.show();
+            SceneController controller2 = Loader.getController();
+            controller2.prepareStageEvents(stage2);
+
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }    
+    }
+}
