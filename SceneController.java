@@ -16,10 +16,6 @@ public class SceneController
 
     /* These FXML variables exactly corrispond to the controls that make up the scene, as designed in Scene 
      * Builder. It is important to ensure that these match perfectly or the controls won't be interactive. */
-    @FXML   private Pane backgroundPane;    
-    @FXML   private Button yesButton;
-    @FXML   private Button noButton;
-    @FXML   private Button exitButton;
     @FXML   private ListView listView;
     @FXML   private Button Badd;
     @FXML   private Button Bedit;
@@ -47,11 +43,12 @@ public class SceneController
         /* The following assertions check to see if the JavaFX controls exists. If one of these fails, the
          * application won't work. If the control names in Scene Builder don't match the variables this fails. */ 
         System.out.println("Asserting controls...");
-        assert backgroundPane != null : "Can't find background pane.";
-        assert yesButton != null : "Can't find yes button.";
-        assert noButton != null : "Can't find yes button.";
-        assert exitButton != null : "Can't find exit button.";
         assert listView != null : "Can't find list box.";
+        assert Badd != null : "Can't find add button.";
+        assert Bedit != null : "Can't find edit button.";
+        assert Bremove != null : "Can't find remove button.";
+        assert Bdetails != null : "Can't find details button.";
+        assert Bexit != null : "Can't find exit button.";
 
         /* Next, we load the list of fruit from the database and populate the listView. */
         System.out.println("Populating scene with items from the database...");        
